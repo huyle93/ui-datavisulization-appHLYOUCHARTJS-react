@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import Chart from "./components/Chart"
+let request = require('request')
 
 class App extends Component {
   constructor(){
@@ -11,12 +12,24 @@ class App extends Component {
     }
   }
 
+  // fetching data
   componentWillMount(){
     this.getChartData();
   }
 
   getChartData(){
     // Async call for API
+    // calling API "hello"
+    let options = {
+      "url": "https://s3.amazonaws.com/hjhcapstone/data.json",
+      "method": "GET"
+    }
+    // Parse JSON data
+    request(options,(err,resp,body)=>{
+      var data = JSON.parse(body)
+      console.log(data)
+    })
+    //
     this.setState({
       chartData: {
         labels: ['Bob', 'Alice', 'Mike', 'Ken', 'Yost', 'Collette'],

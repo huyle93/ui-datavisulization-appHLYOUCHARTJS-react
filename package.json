@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "chart.js": "^2.7.2",
+    "lodash": "^4.17.5",
+    "nodemon": "^1.17.2",
     "react": "^16.2.0",
     "react-chartjs-2": "^2.7.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "request": "^2.85.0"
   },
   "scripts": {
     "start": "react-scripts start",
